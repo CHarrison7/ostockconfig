@@ -17,25 +17,6 @@ eureka:
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ 
   server:
     waitTimeInMsWhenSyncEmpty: 5
-
-spring:
-  profiles: peer1
-eureka:
-  instance:
-    hostname: peer1
-
-    spring:
-  profiles: peer2
-eureka:
-  instance:
-    hostname: peer2
-
-    spring:
-  profiles: peer3
-eureka:
-  instance:
-    hostname: peer3
-      
       
 management:
   endpoints:
@@ -43,3 +24,24 @@ management:
       exposure:
         include: "*"
    
+---
+spring:
+  profiles: peer1
+eureka:
+  instance:
+    hostname: peer1
+
+---
+spring:
+  profiles: peer2
+eureka:
+  instance:
+    hostname: peer2
+
+---
+spring:
+  profiles: peer3
+eureka:
+  instance:
+    hostname: peer3
+      
