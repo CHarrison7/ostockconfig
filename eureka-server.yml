@@ -1,7 +1,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: https://peer1:8070/eureka/,http://peer2:8074/eureka/,http://peer3:8075/eureka/
+      defaultZone: https://eurekaserver1:8070/eureka/,http://eurekaserver2:8074/eureka/,http://eurekaserver3:8075/eureka/
 
 ---
 spring:
