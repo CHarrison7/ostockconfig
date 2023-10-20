@@ -24,4 +24,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"w
+        include: "*"
