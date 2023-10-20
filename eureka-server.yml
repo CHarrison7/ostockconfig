@@ -1,82 +1,25 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://peer1/eureka/,http://peer2/eureka/,http://peer3/eureka/
+
+---
 spring:
-  application:
-    name: eureka-server
   profiles: peer1
-  boot:
-    admin:
-      context-path: /admin
-server:
-  port: 8070
 eureka:
   instance:
     hostname: peer1
-    #preferIpAddress: true
-  client:
-    #registerWithEureka: false
-    #fetchRegistry: false
-    serviceUrl:
-      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      defaultZone: http://peer1/eureka/, http://peer2/eureka/, http://peer3/eureka/
-  server:
-    waitTimeInMsWhenSyncEmpty: 5
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"w
 
 ---
 spring:
-  application:
-    name: eureka-server
   profiles: peer2
-  boot:
-    admin:
-      context-path: /admin
-server:
-  port: 8070
 eureka:
   instance:
     hostname: peer2
-    #preferIpAddress: true
-  client:
-    #registerWithEureka: false
-    #fetchRegistry: false
-    serviceUrl:
-      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      defaultZone: http://peer1/eureka/, http://peer2/eureka/, http://peer3/eureka/
-  server:
-    waitTimeInMsWhenSyncEmpty: 5
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"w
 
 ---
 spring:
-  application:
-    name: eureka-server
   profiles: peer3
-  boot:
-    admin:
-      context-path: /admin
-server:
-  port: 8070
 eureka:
   instance:
     hostname: peer3
-    #preferIpAddress: true
-  client:
-    #registerWithEureka: false
-    #fetchRegistry: false
-    serviceUrl:
-      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      defaultZone: http://peer1/eureka/, http://peer2/eureka/, http://peer3/eureka/
-  server:
-    waitTimeInMsWhenSyncEmpty: 5
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"w
