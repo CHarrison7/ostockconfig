@@ -9,10 +9,10 @@ server:
 eureka:
   instance:
     hostname: eurekaserver3
-    preferIpAddress: true
+    #preferIpAddress: true
   client:
-    registerWithEureka: true
-    fetchRegistry: true
+    registerWithEureka: false
+    fetchRegistry: false
     serviceUrl:
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       defaultZone: http://eurekaserver1:8070/eureka/
