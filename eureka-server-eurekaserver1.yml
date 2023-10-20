@@ -9,7 +9,7 @@ server:
 eureka:
   instance:
     hostname: eurekaserver1
-    #preferIpAddress: true
+    preferIpAddress: true
   client:
     registerWithEureka: false
     fetchRegistry: false
