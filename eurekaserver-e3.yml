@@ -11,8 +11,8 @@ eureka:
     hostname: eurekaserver3
     preferIpAddress: true
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       defaultZone: http://eurekaserver1:8070/eureka/
