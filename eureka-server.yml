@@ -5,21 +5,27 @@ eureka:
 
 ---
 spring:
-  profiles: peer1
+  config:
+    activate:
+      on-profile: peer1
 eureka:
   instance:
     hostname: peer1
 
 ---
 spring:
-  profiles: peer2
+  config:
+    activate:
+      on-profile: peer2
 eureka:
   instance:
     hostname: peer2
 
 ---
 spring:
-  profiles: peer3
+  config:
+    activate:
+      on-profile: peer3
 eureka:
   instance:
     hostname: peer3
