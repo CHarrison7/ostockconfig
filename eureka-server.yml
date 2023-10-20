@@ -7,31 +7,31 @@ eureka:
 spring:
   config:
     activate:
-      on-profile: peer1
+      on-profile: eurekaserver1
 server:
   port: 8070
 eureka:
   instance:
-    hostname: peer1
+    hostname: eurekaserver1
 
 ---
 spring:
   config:
     activate:
-      on-profile: peer2
+      on-profile: eurekaserver2
 server:
   port: 8074
 eureka:
   instance:
-    hostname: peer2
+    hostname: eurekaserver2
 
 ---
 spring:
   config:
     activate:
-      on-profile: peer3
+      on-profile: eurekaserver3
 server:
   port: 8075
 eureka:
   instance:
-    hostname: peer3
+    hostname: eurekaserver3
