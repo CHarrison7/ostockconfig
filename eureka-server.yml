@@ -5,11 +5,11 @@ spring:
     admin:
       context-path: /admin
 server:
-  port: 8075
+  port: 8070
 eureka:
   instance:
     hostname: eurekaserver
-    preferIpAddress: true
+    #preferIpAddress: true
   client:
     #registerWithEureka: false
     #fetchRegistry: false
