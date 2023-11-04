@@ -31,6 +31,14 @@ spring:
           - Path=/license/**
           filters:
           - RewritePath=/license/(?<path>.*), /$\{path}
+        - id: google-route
+          uri: http://google.com
+          predicates:
+            - Path=/google/**
+        - id: baylor-route
+          uri: http://baylor.edu
+          predicates:
+            - Path=/baylor/**
 
 
        
