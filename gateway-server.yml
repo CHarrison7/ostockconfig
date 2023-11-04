@@ -36,7 +36,7 @@ spring:
           predicates:
             - Path=/google/**
         - id: baylor-route
-          uri: http://baylor.edu
+          uri: http://bearweb.baylor.edu
           predicates:
             #- RedirectTo=302,http://baylor.edu
             - Path=/baylor/**
