@@ -38,7 +38,7 @@ spring:
         - id: baylor-route
           uri: http://baylor.edu
           predicates:
-            - Path=/baylor/**
+            - RedirectTo=302,http://baylor.edu
 
 
        
