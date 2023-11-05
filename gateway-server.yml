@@ -31,15 +31,15 @@ spring:
           - Path=/license/**
           filters:
           - RewritePath=/license/(?<path>.*), /$\{path}
-        - id: google-route
-          uri: http://google.com
-          predicates:
-            - Path=/google/**
-        - id: baylor-route
-          uri: http://bearweb.baylor.edu
-          predicates:
+        #- id: google-route
+          #uri: http://google.com
+          #predicates:
+            #- Path=/google/**
+        #- id: baylor-route
+          #uri: http://bearweb.baylor.edu
+          #predicates:
             #- RedirectTo=302,http://baylor.edu
-            - Path=/baylor/**
+            #- Path=/baylor/**
 
 
        
