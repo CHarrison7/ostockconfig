@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://database:5432/ostock_dev?sslmode=disable
+    username: postgres
+    password: {cipher}f4609209a3e75d8ac79a5e3063ce151c2cd28aa431170bb06974b9421e807b6a
+
+origins: http://keycloak:8080
+issuer: http://keycloak:8080/realms/ostock
+
+com:
+  c4-soft:
+    springaddons:
+      oidc:
+        ops:
+        - iss: ${issuer}
+          username-claim: preferred_username
+          authorities:
+          - path: $.realm_access.roles
+            prefix: ROLE_
+          - path: $.resource_access.*.roles
+        resourceserver:
+          cors:
+          - path: /**
+            allowed-origin-patterns: ${origins}
+          permit-all: 
+          - "/actuator/health/readiness"
+          - "/actuator/health/liveness"
