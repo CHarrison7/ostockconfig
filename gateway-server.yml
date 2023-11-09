@@ -1,5 +1,11 @@
 server:
   port: 8072
+  
+logstash.host: 3.136.161.26:5000
+ 
+logging: 
+  config: classpath:logback-delayed.xml
+  
  
 eureka:
   instance:
@@ -10,14 +16,15 @@ eureka:
     serviceUrl:
       defaultZone: http://eurekaserver:8070/eureka/
       
- 
 spring:
+  zipkin:
+    baseUrl: http://zipkin:9411
+  sleuth:
+    sampler:
+      percentage: 1
   cloud:
     loadbalancer.ribbon.enabled: false
     gateway:
-        discovery.locator:
-          enabled: true
-          lowerCaseServiceId: true
         routes:
         - id: organization-service
           uri: lb://organization-service
@@ -25,33 +32,21 @@ spring:
           - Path=/organization/**
           filters:
           - RewritePath=/organization/(?<path>.*), /$\{path}
+          - RemoveRequestHeader= Cookie,Set-Cookie
         - id: licensing-service
           uri: lb://licensing-service
           predicates:
           - Path=/license/**
           filters:
           - RewritePath=/license/(?<path>.*), /$\{path}
-        - id: google-route
-          uri: http://google.com
-          predicates:
-            - Path=/google/**
-        - id: baylor-route
-          uri: http://baylor.edu
-          predicates:
-            #- RedirectTo=302,http://baylor.edu
-            - Path=/baylor/**
-
-
-       
+          - RemoveRequestHeader= Cookie,Set-Cookie
+   
+    
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-  endpoint:
-    health:
-      show-details: always
-    gateway:
-      enabled: true
+        
         
         
