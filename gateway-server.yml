@@ -1,11 +1,5 @@
 server:
   port: 8072
-  
-logstash.host: 3.136.161.26:5000
- 
-logging: 
-  config: classpath:logback-delayed.xml
-  
  
 eureka:
   instance:
@@ -16,6 +10,8 @@ eureka:
     serviceUrl:
       defaultZone: http://eurekaserver:8070/eureka/
       
+
+
 spring:
   zipkin:
     baseUrl: http://zipkin:9411
@@ -40,8 +36,7 @@ spring:
           filters:
           - RewritePath=/license/(?<path>.*), /$\{path}
           - RemoveRequestHeader= Cookie,Set-Cookie
-   
-    
+            
 management:
   endpoints:
     web:
